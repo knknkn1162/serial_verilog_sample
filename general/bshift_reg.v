@@ -1,3 +1,6 @@
+`ifndef _bshift_reg
+`define _bshift_reg
+
 module bshift_reg #(
   parameter COUNT = 3
 ) (
@@ -20,3 +23,4 @@ module bshift_reg #(
   assign o_data = s_data;
 endmodule
 
+`endif
