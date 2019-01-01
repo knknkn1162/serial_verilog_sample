@@ -4,6 +4,10 @@
 git clone https://github.com/knknkn1162/verilog_template.git project_name
 # exec make command on the project according to Makefile in the subdirectory.
 make
+git remote rename origin template
+git remote add origin $git_project_url
+# after (several) commit(s)
+git push -u origin master
 ```
 
 # environments
@@ -19,7 +23,7 @@ make
 ||prefix|suffix|remarks|
 |---|---|---|---|
 |input|`i_`||
-|output|`i_`||
+|output|`o_`||
 |wire|`w_`||
 |reg|`r_`||
 |n-clk delay||`_$n`|
@@ -27,4 +31,4 @@ make
 
 # macros
 
-The general macros is included in include directory for testbench.
+The general macros is included in `macro` directory for testbench.
