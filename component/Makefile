@@ -1,5 +1,3 @@
-FILES=
-
 INCLUDES=\
 	macro \
 	general

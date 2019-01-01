@@ -1,4 +1,3 @@
-include template.mk
 SUBDIRS=general component
 
 .SUFFIX:

@@ -5,6 +5,9 @@ WORKDIR=..
 INCLUDE_OPTION=$(addprefix -I$(WORKDIR)/, $(INCLUDES))
 OPTION=$(INCLUDE_OPTION)
 
+# extract all *.v files and remove extention.
+FILES=$(shell find . -type f -name "*_tb.v" | sed 's!^.*/!!' | tr '.v\n' ' ')
+
 all: $(FILES) clean
 
 %: %.o
