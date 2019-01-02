@@ -29,12 +29,16 @@ module flopr_en_tb;
 
   initial begin
     #(CLK_PERIOD)
+      i_sclr = 1'b1;
     @(posedge clk) #1
-      `assert_eq(o_y, {WIDTH{1'bX}});
+      i_sclr = 1'b0;
+      `assert_eq(o_y, 32'h00000000);
       i_a <= 32'h00000001;
     @(posedge clk) #1
-      `assert_ne(o_y, 32'h00000001);
+      `assert_eq(o_y, 32'h00000000);
       i_en <= 1'b1;
+    @(posedge clk) #1
+      `assert_eq(o_y, 32'h00000001);
     @(posedge clk) #1
       `assert_eq(o_y, 32'h00000001);
 
